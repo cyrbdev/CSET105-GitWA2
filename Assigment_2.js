@@ -6,7 +6,7 @@ var option = 0
 function addGrade(){
     console.log(`Let's add a new grade!`)
     let newgrade = Number(prompt(`Add your grade: `))
-    if (newgrade >= 0 || newgrade <=100){
+    if (newgrade >= 0 && newgrade <=100){
         grade.push(newgrade)
     }
     else{
@@ -21,17 +21,23 @@ function removeGrade(){
     console.log(`This are your save grades: ${grade}`)
     let exixtingrade = Number(prompt(`Remove one of your grades: `))
     index = grade.indexOf(exixtingrade)
-
-        if (index !== -1){
-            grade.splice(index, 1)
-        }
-        else{
-            console.log(`Grade DON'T finded!`)
-            removeGrade()
-        }
-        return grade
+    if (index !== -1){
+        grade.splice(index, 1)
     }
+    else{
+        console.log(`Grade DON'T finded!`)
+        removeGrade()
+    }
+    return grade
+}
 
+function calculateAve(){
+    for (let i = 0; i < grade.length; i++) {
+        console.log(grade[i])
+        
+    }
+    return i
+}
 
 
 
@@ -54,7 +60,7 @@ while (option !== 6){
     }
 
     else if (option === 3){
-        // here goes calculate
+        calculateAve()
     }
 
     else if (option === 4){
