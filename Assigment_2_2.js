@@ -136,8 +136,6 @@ Movie Collection Manager
 7. Exit`)
 
     option = Number(prompt(`Please select one of this options: `))
-
-
     if (option === 1){
         addMovie()
     }

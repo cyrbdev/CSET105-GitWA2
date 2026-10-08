@@ -16,6 +16,7 @@ function addGrade(){
     return grade
 }
 
+
 function removeGrade(){
     console.log(`Let's remove a grede!`)
     console.log(`This are your save grades: ${grade}`)
