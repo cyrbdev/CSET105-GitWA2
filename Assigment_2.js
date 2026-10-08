@@ -20,7 +20,7 @@ function removeGrade(){
     console.log(`Let's remove a grede!`)
     console.log(`This are your save grades: ${grade}`)
     let exixtingrade = Number(prompt(`Remove one of your grades: `))
-    index = grade.indexOf(exixtingrade)
+    let index = grade.indexOf(exixtingrade)
     if (index !== -1){
         grade.splice(index, 1)
     }
@@ -32,18 +32,53 @@ function removeGrade(){
 }
 
 function calculateAve(){
+    let total = 0
     for (let i = 0; i < grade.length; i++) {
-        console.log(grade[i])
-        
+        total = total + grade[i];
     }
-    return i
+    let average = total / grade.length
+    if (grade.length === 0){
+        console.log(`You not have a grade!!!!!`)        
+    }
+    else{
+    console.log(`Grades: ${grade}`)
+    console.log(`Average: ${average}`)
+    }
+    return average
+}
+
+function findGrade(){
+     let max = 0
+    for (let i = 0; i < grade.length; i++){
+        if (grade[i] > max){
+            max = grade[i];
+        } 
+    }
+    if (grade.length === 0){
+        console.log(`You dont have a grade!!!!`)
+    }
+    else {
+        console.log(`Your highest grade is ${max}`)
+    }
+    return max
+}
+
+function allGrade(){
+    numero = 0
+    if (grade.length !==0){
+        for (let i = 0; i < grade.length; i++) {
+        console.log(`${i + 1}. ${grade[i]}`)
+        }
+    }
+    else{
+        console.log(`You dont have a grade!!!!`)
+    }
 }
 
 
 
-
 while (option !== 6){
-    console.log(`Welcome to your Student Grade Manager!`)
+    console.log(`Student Grade Manager!`)
     console.log(`1. Add Grade
 2. Remove Grade
 3. Calculate Average
@@ -64,10 +99,10 @@ while (option !== 6){
     }
 
     else if (option === 4){
-        // here goes find
+        findGrade()
     }
 
     else if (option === 5){
-        // here goes print
+        allGrade()
     }
 }
